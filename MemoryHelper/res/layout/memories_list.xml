@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/memory_row_TextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/creationDate_row_TextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="12dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/id_row_TextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="10dp"
+        android:textStyle="italic" />
+
+</LinearLayout>

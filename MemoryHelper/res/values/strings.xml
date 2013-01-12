@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MemoryHelperActivity!</string>
+    <string name="app_name">Memory Helper</string>
+    <string name="search_memory_Button">Search memory</string>
+    <string name="create_memory_Button">Create memory</string>
+    <string name="edit_memory_Button">Update memory</string>
+    <string name="exit_Button">Exit</string>
+    <string name="main_text">Write in here the things that you want to remember sometime. Try to use some key words in the memories, it will make much easier the search.</string>
+    <string name="memory_options">Memory options</string>
+    <string name="memory_delete">Delete memory</string>
+    <string name="memory_edit">Edit memory</string>
+
+</resources>
