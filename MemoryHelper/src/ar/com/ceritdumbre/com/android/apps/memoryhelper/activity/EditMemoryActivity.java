@@ -1,12 +1,13 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.activity;
 
 import android.content.DialogInterface;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.data.MemoryHelperDatabaseAdapter;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.MemoryHelperApplication;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.model.Memory;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.utils.AndroidUtils;
 
 public class EditMemoryActivity extends BaseCrudMemoryActivity {
@@ -46,26 +47,24 @@ public class EditMemoryActivity extends BaseCrudMemoryActivity {
 	}
 
 	private void fillData() {
+		MemoryHelperApplication application = (MemoryHelperApplication) this
+				.getApplication();
 
-		String memory = null;
+		Memory memory = application.getMemoryData().findById(memoryId);
 
-		Cursor cursor = MemoryHelperDatabaseAdapter.getInstance(this).find(
-				" WHERE " + MemoryHelperDatabaseAdapter.KEY_ROWID + " = ?",
-				new String[] { "" + memoryId });
-		startManagingCursor(cursor);
-		if (cursor.moveToFirst()) {
-			memory = cursor.getString(cursor
-					.getColumnIndex(MemoryHelperDatabaseAdapter.KEY_MEMORY));
-		}
-		memoryEditText.setText(memory);
+		memoryEditText.setText(memory.getMemory());
 	}
 
 	public void updateMemory() {
 		Log.i("updateMemory", "editing memory "
 				+ memoryEditText.getText().toString());
-		MemoryHelperDatabaseAdapter.getInstance(this).updateMemory(memoryId,
-				MemoryHelperDatabaseAdapter.KEY_ROWID + " = ?",
+
+		MemoryHelperApplication application = (MemoryHelperApplication) this
+				.getApplication();
+
+		application.getMemoryData().updateMemory(memoryId,
 				memoryEditText.getText().toString());
+
 	}
 
 }

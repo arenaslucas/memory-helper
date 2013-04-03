@@ -1,12 +1,10 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.activity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -18,8 +16,10 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.data.Memory;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.data.MemoryHelperDatabaseAdapter;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.MemoryHelperApplication;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.adapter.MemoryAdapter;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.model.Memory;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.utils.AndroidUtils;
 
 public class SearchMemoryActivity extends ListActivity {
@@ -51,36 +51,18 @@ public class SearchMemoryActivity extends ListActivity {
 	}
 
 	public void search(View view) {
-		Cursor cursor = MemoryHelperDatabaseAdapter.getInstance(this).find(
-				"WHERE memory LIKE ?",
-				new String[] { "%" + searchText.getText() + "%" });
-		Log.d("search",
-				"searching for memories with text [" + searchText.getText()
-						+ "]");
-		startManagingCursor(cursor);
+		MemoryHelperApplication application = (MemoryHelperApplication) this
+				.getApplication();
 
-		List<Memory> memories = new ArrayList<Memory>();
-		Memory memory = null;
-
-		for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-			Log.d("search", "adding memory " + cursor.getString(1));
-			memory = new Memory();
-			memory.setId(cursor.getInt(cursor
-					.getColumnIndex(MemoryHelperDatabaseAdapter.KEY_ROWID)));
-			memory.setMemory(cursor.getString(cursor
-					.getColumnIndex(MemoryHelperDatabaseAdapter.KEY_MEMORY)));
-			memory.setCreationDate(cursor.getString(cursor
-					.getColumnIndex(MemoryHelperDatabaseAdapter.KEY_CREATION_DATE)));
-			memories.add(memory);
-			Log.i("adding Memory", memory.toString());
-		}
+		List<Memory> memories = application.getMemoryData().findByMemory(
+				searchText.getText().toString());
 
 		MemoryAdapter memoryAdapter = new MemoryAdapter(this,
 				R.layout.memories_list, memories);
 
 		setListAdapter(memoryAdapter);
 
-		if (cursor.getCount() == 0) {
+		if (memories.size() == 0) {
 			AndroidUtils.showAlertDialogWithOkButton(this, "Memory helper",
 					"No memories found", new DialogInterface.OnClickListener() {
 
@@ -120,8 +102,9 @@ public class SearchMemoryActivity extends ListActivity {
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
-							MemoryHelperDatabaseAdapter.getInstance(
-									SearchMemoryActivity.this).deleteMemory(
+							MemoryHelperApplication application = (MemoryHelperApplication) SearchMemoryActivity.this
+									.getApplication();
+							application.getMemoryData().deleteMemory(
 									selectedMemory.getId());
 							search(null);
 						}

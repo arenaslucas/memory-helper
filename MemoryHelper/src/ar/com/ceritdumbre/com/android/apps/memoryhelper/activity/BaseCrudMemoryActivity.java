@@ -1,10 +1,13 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.activity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R.id;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R.layout;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.utils.AndroidUtils;
 
 public class BaseCrudMemoryActivity extends Activity {

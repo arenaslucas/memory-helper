@@ -1,11 +1,12 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper.data;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.model;
 
+import java.util.Date;
 
 public class Memory {
 
 	private int id;
 	private String memory;
-	private String creationDate;
+	private Long creationDate;
 
 	public int getId() {
 		return id;
@@ -23,11 +24,11 @@ public class Memory {
 		this.memory = memory;
 	}
 
-	public String getCreationDate() {
+	public Long getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(String creationDate) {
+	public void setCreationDate(Long creationDate) {
 		this.creationDate = creationDate;
 	}
 

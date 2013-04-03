@@ -1,11 +1,12 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.data.MemoryHelperDatabaseAdapter;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.MemoryHelperApplication;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.utils.AndroidUtils;
 
 public class CreateMemoryActivity extends BaseCrudMemoryActivity {
@@ -40,8 +41,10 @@ public class CreateMemoryActivity extends BaseCrudMemoryActivity {
 	public void createMemory() {
 		Log.i("CreateMemory", "creating memory "
 				+ memoryEditText.getText().toString());
-		MemoryHelperDatabaseAdapter.getInstance(this).createMemory(
+
+		MemoryHelperApplication application = (MemoryHelperApplication) this
+				.getApplication();
+		application.getMemoryData().insertOrIgnore(
 				memoryEditText.getText().toString());
 	}
-
 }

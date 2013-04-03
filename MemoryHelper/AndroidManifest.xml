@@ -4,13 +4,14 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="7" />
+    <uses-sdk android:minSdkVersion="8" />
 
     <application
+        android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.MemoryHelperApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" >
         <activity
-            android:name=".MainActivity"
+            android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SearchMemoryActivity"
+            android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.activity.SearchMemoryActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.SEARCH_MEMORY" />
@@ -28,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CreateMemoryActivity"
+            android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.activity.CreateMemoryActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.CREATE_MEMORY" />
@@ -37,7 +38,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".EditMemoryActivity"
+            android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.activity.EditMemoryActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="ar.com.ceritdumbre.com.android.apps.memoryhelper.EDIT_MEMORY" />

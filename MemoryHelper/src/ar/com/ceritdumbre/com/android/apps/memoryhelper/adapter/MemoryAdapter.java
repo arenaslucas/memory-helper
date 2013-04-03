@@ -1,4 +1,4 @@
-package ar.com.ceritdumbre.com.android.apps.memoryhelper;
+package ar.com.ceritdumbre.com.android.apps.memoryhelper.adapter;
 
 import java.util.List;
 
@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.data.Memory;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
+import ar.com.ceritdumbre.com.android.apps.memoryhelper.model.Memory;
 
 public class MemoryAdapter extends ArrayAdapter<Memory> {
 
