@@ -39,6 +39,7 @@ public final class R {
         public static final int app_name=0x7f040003;
         public static final int create_memory=0x7f040005;
         /**  fields 
+ fields 
          */
         public static final int creation_date=0x7f040000;
         public static final int delete_memory=0x7f040009;

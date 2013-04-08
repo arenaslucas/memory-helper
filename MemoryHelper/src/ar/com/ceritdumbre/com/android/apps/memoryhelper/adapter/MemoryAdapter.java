@@ -1,6 +1,6 @@
 package ar.com.ceritdumbre.com.android.apps.memoryhelper.adapter;
 
-import java.sql.Date;
+import java.text.DateFormat;
 import java.util.List;
 
 import android.app.Activity;
@@ -19,9 +19,12 @@ public class MemoryAdapter extends ArrayAdapter<Memory> {
 
 	private int textViewResourceId;
 
+	private Context context;
+
 	public MemoryAdapter(Context context, int newTextViewResourceId,
 			List<Memory> newItems) {
 		super(context, newTextViewResourceId, newItems);
+		this.context = context;
 		this.items = newItems;
 		this.textViewResourceId = newTextViewResourceId;
 	}
@@ -37,18 +40,21 @@ public class MemoryAdapter extends ArrayAdapter<Memory> {
 
 		Memory memory = items.get(position);
 		if (memory != null) {
+
 			TextView memoryTextView = (TextView) view
 					.findViewById(R.id.memory_row_TextView);
 			TextView creationDateTextView = (TextView) view
 					.findViewById(R.id.creationDate_row_TextView);
 			TextView idTextView = (TextView) view
 					.findViewById(R.id.id_row_TextView);
-			idTextView.setText(convertView.getResources()
-					.getString(R.string.id) + ":" + memory.getId());
+			idTextView.setText(context.getString(R.string.id) + ":"
+					+ memory.getId());
 			memoryTextView.setText(memory.getMemory());
-			creationDateTextView.setText(convertView.getResources().getString(
-					R.string.creation_date)
-					+ ":" + new Date(memory.getCreationDate()));
+			creationDateTextView
+					.setText(context.getString(R.string.creation_date)
+							+ ": "
+							+ DateFormat.getInstance().format(
+									memory.getCreationDate()));
 		}
 		return view;
 	}

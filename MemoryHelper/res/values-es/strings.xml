@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- fields -->
+    <string name="creation_date">Fecha de creación</string>
+    <string name="id">ID</string>
     <string name="app_name">Memory Helper</string>
     <string name="search_memory">Buscar memoria</string>
     <string name="create_memory">Crear memoria</string>
