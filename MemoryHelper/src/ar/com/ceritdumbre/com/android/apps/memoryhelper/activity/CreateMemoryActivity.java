@@ -15,15 +15,16 @@ public class CreateMemoryActivity extends BaseCrudMemoryActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		memoryButton.setText(R.string.create_memory_Button);
+		memoryButton.setText(R.string.create_memory);
 		memoryButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (validateMemoryEditText()) {
 					createMemory();
 					AndroidUtils.showAlertDialogWithOkButton(
-							CreateMemoryActivity.this, "Create memory",
-							"Memory created",
+							CreateMemoryActivity.this,
+							getString(R.string.create_memory),
+							getString(R.string.message_memory_created),
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface arg0,

@@ -20,8 +20,7 @@
             android:id="@+id/search_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/search_memory_Button" />
-
+            android:text="@string/search_memory" />
     </LinearLayout>
 
     <ListView

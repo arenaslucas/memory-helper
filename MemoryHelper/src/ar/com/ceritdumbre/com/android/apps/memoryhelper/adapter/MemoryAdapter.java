@@ -1,5 +1,6 @@
 package ar.com.ceritdumbre.com.android.apps.memoryhelper.adapter;
 
+import java.sql.Date;
 import java.util.List;
 
 import android.app.Activity;
@@ -42,10 +43,12 @@ public class MemoryAdapter extends ArrayAdapter<Memory> {
 					.findViewById(R.id.creationDate_row_TextView);
 			TextView idTextView = (TextView) view
 					.findViewById(R.id.id_row_TextView);
-			idTextView.setText("ID:" + memory.getId());
+			idTextView.setText(convertView.getResources()
+					.getString(R.string.id) + ":" + memory.getId());
 			memoryTextView.setText(memory.getMemory());
-			creationDateTextView.setText("Creation date: "
-					+ memory.getCreationDate());
+			creationDateTextView.setText(convertView.getResources().getString(
+					R.string.creation_date)
+					+ ":" + new Date(memory.getCreationDate()));
 		}
 		return view;
 	}

@@ -10,21 +10,21 @@ import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
 
 public class MainActivity extends Activity {
 
-	protected Button mainSearchMemoryButton;
-	protected Button mainCreateMemoryButton;
-	protected Button exitButton;
+	protected Button buttonSearchMemory;
+	protected Button buttonCreateMemory;
+	protected Button buttonExit;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.main);
 
-		mainCreateMemoryButton = (Button) findViewById(R.id.main_create_memory_Button);
-		mainSearchMemoryButton = (Button) findViewById(R.id.main_search_memory_Button);
-		exitButton = (Button) findViewById(R.id.exit_Button);
+		buttonCreateMemory = (Button) findViewById(R.id.button_createMemory);
+		buttonSearchMemory = (Button) findViewById(R.id.button_searchMemory);
+		buttonExit = (Button) findViewById(R.id.button_exit);
 
-		mainCreateMemoryButton.setOnClickListener(new OnClickListener() {
+		buttonCreateMemory.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent createMemoryIntent = new Intent(MainActivity.this,
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		mainSearchMemoryButton.setOnClickListener(new OnClickListener() {
+		buttonSearchMemory.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent searchMemoryIntent = new Intent(MainActivity.this,
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		exitButton.setOnClickListener(new OnClickListener() {
+		buttonExit.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				finish();
@@ -50,6 +50,5 @@ public class MainActivity extends Activity {
 		});
 
 	}
-
 
 }

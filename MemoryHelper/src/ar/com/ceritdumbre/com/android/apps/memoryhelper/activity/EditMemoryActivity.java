@@ -14,21 +14,24 @@ public class EditMemoryActivity extends BaseCrudMemoryActivity {
 
 	protected int memoryId;
 
+	public static final String MEMORY_ID_KEY = "MEMORY_ID";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		memoryId = getIntent().getExtras().getInt("MEMORY_ID");
+		memoryId = getIntent().getExtras().getInt(MEMORY_ID_KEY);
 
-		memoryButton.setText(R.string.edit_memory_Button);
+		memoryButton.setText(R.string.edit_memory);
 		memoryButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				if (validateMemoryEditText()) {
 					updateMemory();
 					AndroidUtils.showAlertDialogWithOkButton(
-							EditMemoryActivity.this, "Create Memory",
-							"Memory updated",
+							EditMemoryActivity.this,
+							getString(R.string.edit_memory),
+							getString(R.string.message_memory_updated),
 							new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface arg0,

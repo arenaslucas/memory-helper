@@ -63,8 +63,10 @@ public class SearchMemoryActivity extends ListActivity {
 		setListAdapter(memoryAdapter);
 
 		if (memories.size() == 0) {
-			AndroidUtils.showAlertDialogWithOkButton(this, "Memory helper",
-					"No memories found", new DialogInterface.OnClickListener() {
+			AndroidUtils.showAlertDialogWithOkButton(this,
+					getString(R.string.app_name),
+					getString(R.string.message_no_memories_found),
+					new DialogInterface.OnClickListener() {
 
 						@Override
 						public void onClick(DialogInterface arg0, int arg1) {
@@ -79,9 +81,9 @@ public class SearchMemoryActivity extends ListActivity {
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		menu.setHeaderTitle(R.string.memory_options);
-		menu.add(0, MEMORY_DELETE, Menu.FIRST, R.string.memory_delete);
-		menu.add(1, MEMORY_EDIT, Menu.FIRST, R.string.memory_edit);
+		menu.setHeaderTitle(R.string.options);
+		menu.add(0, MEMORY_DELETE, Menu.FIRST, R.string.delete_memory);
+		menu.add(1, MEMORY_EDIT, Menu.FIRST, R.string.edit_memory);
 	}
 
 	@Override
@@ -97,8 +99,9 @@ public class SearchMemoryActivity extends ListActivity {
 
 		switch (item.getItemId()) {
 		case MEMORY_DELETE:
-			AndroidUtils.showConfirmDialog(this, "Memory delete",
-					"Delete memory selected?",
+			AndroidUtils.showConfirmDialog(this,
+					getString(R.string.delete_memory),
+					getString(R.string.message_delete_memory_confirm),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -113,7 +116,8 @@ public class SearchMemoryActivity extends ListActivity {
 			break;
 		case MEMORY_EDIT:
 			Intent intent = new Intent(this, EditMemoryActivity.class);
-			intent.putExtra("MEMORY_ID", selectedMemory.getId());
+			intent.putExtra(EditMemoryActivity.MEMORY_ID_KEY,
+					selectedMemory.getId());
 			startActivityForResult(intent, MEMORY_EDIT);
 			break;
 		}

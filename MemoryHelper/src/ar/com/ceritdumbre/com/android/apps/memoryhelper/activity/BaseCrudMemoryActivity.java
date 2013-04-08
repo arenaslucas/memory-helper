@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.R;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.R.id;
-import ar.com.ceritdumbre.com.android.apps.memoryhelper.R.layout;
 import ar.com.ceritdumbre.com.android.apps.memoryhelper.utils.AndroidUtils;
 
 public class BaseCrudMemoryActivity extends Activity {
@@ -27,8 +25,9 @@ public class BaseCrudMemoryActivity extends Activity {
 	protected boolean validateMemoryEditText() {
 		if (memoryEditText.getText() == null
 				|| memoryEditText.getText().toString().trim().length() == 0) {
-			AndroidUtils.showAlertDialogWithOkButton(this, "Create memory",
-					"Memory could not be empty",
+			AndroidUtils.showAlertDialogWithOkButton(this,
+					getString(R.string.app_name),
+					getString(R.string.validation_not_empty),
 					new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface arg0, int arg1) {

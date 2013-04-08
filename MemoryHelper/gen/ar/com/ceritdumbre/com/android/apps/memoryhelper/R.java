@@ -14,11 +14,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int button_createMemory=0x7f050000;
+        public static final int button_exit=0x7f050002;
+        public static final int button_searchMemory=0x7f050001;
         public static final int creationDate_row_TextView=0x7f050004;
-        public static final int exit_Button=0x7f050002;
         public static final int id_row_TextView=0x7f050005;
-        public static final int main_create_memory_Button=0x7f050001;
-        public static final int main_search_memory_Button=0x7f050000;
         public static final int memory_Button=0x7f050007;
         public static final int memory_EditText=0x7f050006;
         public static final int memory_row_TextView=0x7f050003;
@@ -34,15 +34,34 @@ public final class R {
         public static final int search_memory=0x7f030005;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int create_memory_Button=0x7f040003;
-        public static final int edit_memory_Button=0x7f040004;
-        public static final int exit_Button=0x7f040005;
-        public static final int hello=0x7f040000;
-        public static final int main_text=0x7f040006;
-        public static final int memory_delete=0x7f040008;
-        public static final int memory_edit=0x7f040009;
-        public static final int memory_options=0x7f040007;
-        public static final int search_memory_Button=0x7f040002;
+        /**  application name 
+         */
+        public static final int app_name=0x7f040003;
+        public static final int create_memory=0x7f040005;
+        /**  fields 
+         */
+        public static final int creation_date=0x7f040000;
+        public static final int delete_memory=0x7f040009;
+        public static final int edit_memory=0x7f040006;
+        public static final int exit_Button=0x7f040007;
+        public static final int id=0x7f040001;
+        /**  instructions 
+         */
+        public static final int instructions=0x7f040002;
+        public static final int message_delete_memory_confirm=0x7f04000d;
+        /**  messages 
+ messages 
+         */
+        public static final int message_memory_created=0x7f04000a;
+        public static final int message_memory_updated=0x7f04000b;
+        public static final int message_no_memories_found=0x7f04000c;
+        public static final int options=0x7f040008;
+        /**  actions 
+         */
+        public static final int search_memory=0x7f040004;
+        /**  validations 
+ validations 
+         */
+        public static final int validation_not_empty=0x7f04000e;
     }
 }

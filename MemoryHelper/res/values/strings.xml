@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, MemoryHelperActivity!</string>
+    <!-- fields -->
+    <string name="creation_date">Creation date</string>
+    <string name="id">ID</string>
+    <!-- instructions -->
+    <string name="instructions">Write in here the things that you want to remember sometime. Try to use some key words in the memories, it will make much easier the search.</string>
+    <!-- application name -->
     <string name="app_name">Memory Helper</string>
-    <string name="search_memory_Button">Search memory</string>
-    <string name="create_memory_Button">Create memory</string>
-    <string name="edit_memory_Button">Update memory</string>
+    <!-- actions -->
+    <string name="search_memory">Search memory</string>
+    <string name="create_memory">Create memory</string>
+    <string name="edit_memory">Edit memory</string>
     <string name="exit_Button">Exit</string>
-    <string name="main_text">Write in here the things that you want to remember sometime. Try to use some key words in the memories, it will make much easier the search.</string>
-    <string name="memory_options">Memory options</string>
-    <string name="memory_delete">Delete memory</string>
-    <string name="memory_edit">Edit memory</string>
+    <string name="options">Memory options</string>
+    <string name="delete_memory">Delete memory</string>
+    <!-- messages -->
+    <string name="message_memory_created">Memory created</string>
+    <string name="message_memory_updated">Memory updated</string>
+    <string name="message_no_memories_found">No memories found</string>
+    <string name="message_delete_memory_confirm">¿Delete selected memory?</string>
+    <!-- validations -->
+    <string name="validation_not_empty">Memory could not be empty</string>
 
 </resources>
