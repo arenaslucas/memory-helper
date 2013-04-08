@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Memory Helper</string>
+    <string name="search_memory">Buscar memoria</string>
+    <string name="create_memory">Crear memoria</string>
+    <string name="edit_memory">Editar memoria</string>
+    <string name="delete_memory">Eliminar memoria</string>
+    <string name="exit_Button">Salir</string>
+    <string name="instructions">Escribe aquí cosas que quieras recordar en otro momento. Usa palabras clave en el texto, eso facilitará la búsqueda de tus memorias.</string>
+    <string name="options">Opciones</string>
+    <!-- messages -->
+    <string name="message_memory_created">Memoria creada</string>
+    <string name="message_memory_updated">Memoria actualizada</string>
+    <string name="message_no_memories_found">No se encontraron memorias</string>
+    <string name="message_delete_memory_confirm">¿Eliminar memoria seleccionada?</string>
+    <!-- validations -->
+    <string name="validation_not_empty">La memoria no puede estar vacía</string>
+
+</resources>
